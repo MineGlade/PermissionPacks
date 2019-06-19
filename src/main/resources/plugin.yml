@@ -114,6 +114,10 @@ permissions:
       worldedit.history.redo: true                         # command: //redo
       worldedit.history.undo: true                         # command: //undo
   
+  permpack.worldedit.selection:
+    description: "worldedit selection permissions"
+  
+  
   permpack.worldedit.schematic:
     description: "worldedit schematic permissions"
     children:
