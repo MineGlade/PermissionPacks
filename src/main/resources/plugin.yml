@@ -1,0 +1,138 @@
+main: com.mineglade.PermissionPacks.PermissionPacks
+description: |-
+   Permission Packs!
+   New permission pack ideas? post them on the github.
+   https://www.github.com/mineglade/PermissionPacks
+version: 1.0
+name: PermissionPacks
+author: MineGlade
+website: https://www.github.com/MineGlade/PermissionPacks
+
+permissions: 
+
+# =====================================================
+#                      Global Info
+# =====================================================
+# PermissionPacks' permission hierarchy is as follows:
+#   basic: |-
+#     - These will contain basic usage permissions. 
+#     - Everything most servers would want in their default group or rank.
+#
+#   novice: |-
+#     - These will contain more advanced permissions. 
+#     - One would give these to e.g. builders, trusted or verifieds on the server.
+#
+#   premium: |-
+#     - These will contain donator perks (all in compliance with the EULA), 
+#     - and will go great in your first-tier donator rank.
+# 
+#   mod: |-
+#     - These will contain most moderator permissions. 
+#     - So that your mods can keep the chat clean, tempban, kick and of course in-game helping as well.
+#
+#   admin: |-
+#     - These will contain all permissions (except for server-level perms like /start, /stop, /restart etc. 
+#     - This is especially useful for plugins that don't provide any wildcards!
+#
+#   plugin-specific packs: |-
+#     - These packs will structured as permpack.<plugin>.<category>[.subcategory[...]]
+#     - These will contain presets like the aforementioned ones.
+# 
+# If you need a new permission pack or changes to an existing one, open an issue on the github.
+# https://www.github.com/MineGlade/PermissionPacks
+
+# =====================================================
+#                     Global Packs
+# =====================================================
+# A bunch of standard global packs with great presets for the aforementioned ranks.
+
+  permpack.basic:
+    description: "basic usage permissions for a 'default' rank."
+    default: true
+    children: []
+    
+  permpack.novice:
+    description: "more advanced permissions for a 'trusted' or 'builder' rank."
+    children:
+      permpack.basic: true
+      permpack.worldedit.novice: true
+  
+  permpack.premium:
+    description: "donator perks, all in compliance with the Minecraft EULA."
+    children: 
+      permpack.basic: true
+  
+  permpack.moderator:
+    description: "moderator permissions, allows for chat regulation and in-game moderation."
+    children: 
+      permpack.basic: true
+      permpack.novice: true
+  
+  permpack.admin: 
+    description: "all in-game perms, useful for plugins that don't provide wildcard permissions or hierarchy."
+    children: 
+      permpack.basic: true
+      permpack.novice: true
+      permpack.premium: true
+      permpack.moderator: true
+
+# =====================================================
+#                    WorldEdit Packs
+# =====================================================
+# some of these contain FAWE-specific (FastAsyncWorldEdit) permission nodes.
+# If you use WorldEdit a lot, it is highly recommended to use FAWE.
+
+  # WorldEdit Group Packs
+  permpack.worldedit.novice:
+    description: "basic permissions for worldedit usage."
+    children: 
+      # groups and permpacks:
+      permpack.worldedit.clipboard: true
+      permpack.worldedit.history: true
+      permpack.worldedit.selection: true
+      
+      # specific permissions:
+      worldedit.help: true                                 # command: //help
+
+  # WorldEdit Specific Packs
+  permpack.worldedit.clipboard:
+    description: "worldedit clipboard permissions"
+    children:
+      worldedit.clipboard: true
+      worldedit.clipboard.asset: true                      # command: /asset [category]
+      worldedit.clipboard.clear: true                      # command: /clearclipboard
+      worldedit.clipboard.copy: true                       # command: //copy
+      worldedit.clipboard.cut: true                        # command: //cut
+      worldedit.clipboard.download: true                   # command: /download
+      worldedit.clipboard.lazycopy: true                   # command: //lazycopy [-e] [-m]
+  
+  permpack.worldedit.history:
+    description: "worldedit history permissions"
+    children: 
+      worldedit.history: true
+      worldedit.history.clear: true                        # command: //clearhistory
+      worldedit.history.redo: true                         # command: //redo
+      worldedit.history.undo: true                         # command: //undo
+  
+  permpack.worldedit.schematic:
+    description: "worldedit schematic permissions"
+    children:
+      worldedit.clipboard.load: true                       # command: //schematic load [<format>] <filename>
+      worldedit.clipboard.save: true                       # command: /schematic save [format] <filename> 
+      worldedit.schematic: true                            # command: //schematic
+      worldedit.schematic.clear: true                      # command: //schematic unload [file]
+      worldedit.schematic.delete: true                     # command: //schematic delete <filename|*>
+      worldedit.schematic.delete.other: true               # command: //schematic delete <filename|*>
+      worldedit.schematic.formats: true
+      worldedit.schematic.list: true                       # command: //schematic list [global|mine|<filter>] [page=1] [-d] [-n] [-p]
+      worldedit.schematic.load: true                       # command: //schematic load [<format>] <filename>
+      worldedit.schematic.load.other: true                 # command: //schematic load [<format>] <filename>
+      worldedit.schematic.remap: true                      # 
+      worldedit.schematic.save: true                       # command: //schematic save [format] <filename>
+      worldedit.schematic.save.other: true                 # command: //schematic save [format] <filename>
+      worldedit.schematic.upload: true
+      
+      
+      
+      
+      
