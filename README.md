@@ -7,7 +7,7 @@ This plugin.yml is commented so that it is easier to browse.
 If you are missing any permission packs, you can either request them by opening an issue, 
 or fork the repo, make your edits and make a pull request.
 
-## All Permission Packs
+### All Permission Packs
 <details>
   <summary>Click to expand</summary>
   
