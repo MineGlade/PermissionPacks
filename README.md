@@ -7,5 +7,5 @@ This plugin.yml is commented so that it is easier to browse.
 If you are missing any permission packs, you can either request them by opening an issue, 
 or fork the repo, make your edits and make a pull request.
 
-<a href="https://github.com/MineGlade/PermissionPacks/wiki"># All Permission Packs</a>
-Check out the <a href="https://github.com/MineGlade/PermissionPacks/wiki">wiki</a> to see all the permission packs and documentation.
+# [All Permission Packs](https://github.com/MineGlade/PermissionPacks/wiki)
+Check out the [wiki](https://github.com/MineGlade/PermissionPacks/wiki) to see all the permission packs and documentation.
