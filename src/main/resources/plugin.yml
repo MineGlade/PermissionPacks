@@ -7,6 +7,7 @@ version: 1.0
 name: PermissionPacks
 author: MineGlade
 website: https://www.github.com/MineGlade/PermissionPacks
+api-version: 1.13
 
 permissions: 
 
